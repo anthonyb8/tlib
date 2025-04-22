@@ -5,11 +5,14 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library
-add_library(tlib STATIC src/lib.cpp)
-# target_include_directories(tlib PUBLIC include/)
-
-target_include_directories(tlib PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
+add_library(tlib 
+  src/core.cpp
+  src/other.cpp
 )
+target_include_directories(tlib PUBLIC include/)
+
+# target_include_directories(tlib PUBLIC
+#     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#     $<INSTALL_INTERFACE:include>
+# )
 
